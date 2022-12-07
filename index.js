@@ -1,16 +1,21 @@
 // Code your solution in this file!
-function receivesAFunction(callback){
-    return callback()
+const drivers = ['Antonia', 'Nuru', 'Amari', 'Mo'];
+const returnFirstTwoDrivers = function () {
+    return drivers.slice(0, 2)
 }
 
-function returnsANamedFunction(){
-   return function hello(){
-   }
+const returnLastTwoDrivers = function () {
+    return drivers.slice(2)
 }
 
-function returnsAnAnonymousFunction(){
-
-   return function(){
-
-   }
+const selectingDrivers = [returnFirstTwoDrivers, returnLastTwoDrivers];
+function createFareMultiplier(fareValueMultiplier) {
+    return function (fare) {
+       return fareValueMultiplier * fare;
+    };
+}
+const fareDoubler = createFareMultiplier(2);
+const fareTripler = createFareMultiplier(3)
+function selectDifferentDrivers(drivers, selectingDrivers) {
+    return selectingDrivers(drivers)
 }
